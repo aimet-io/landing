@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "mongoose": "^6.10.0",
+    "nanoid": "^4.0.1",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-speech-to-text": "^0.8.0",
     "react-icons": "^4.7.1",
+    "react-speech-recognition": "^3.10.0",
+    "regenerator-runtime": "^0.13.11",
     "swiper": "^9.0.1"
   },
   "devDependencies": {

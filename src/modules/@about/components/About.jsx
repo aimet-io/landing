@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About () {
   return (
-    <section className='flex flex-col lg:flex-row justify-center items-center lg:px-52'>
+    <section className='flex flex-col lg:flex-row justify-center items-center lg:px-52 overflow-hidden'>
       <div className='text-white grid gap-4'>
         <h4 className='text-[3rem]  font-extrabold'>NOSOTROS</h4>
         <p className='text-justify'>

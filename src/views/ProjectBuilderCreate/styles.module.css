@@ -1,0 +1,21 @@
+.section {
+  @apply flex gap-2;
+}
+.section > * {
+  width: 50%;
+}
+.group {
+  @apply flex flex-col my-3 gap-1;
+}
+
+.input {
+  @apply bg-transparent border-sky-600 border-2 rounded-md outline-none pl-1;
+}
+
+.btnAdd {
+  @apply bg-sky-600 rounded-md;
+}
+
+.btnSubmit {
+  @apply bg-sky-600 rounded-md mx-auto py-3 px-5;
+}
