@@ -1,11 +1,11 @@
 import "regenerator-runtime/runtime";
 import "@/styles/globals.css";
-import Layout from "@/layouts/Layout";
+import { LandingLayout } from "@/layouts/LandingLayout";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <LandingLayout>
       <Component {...pageProps} />
-    </Layout>
+    </LandingLayout>
   );
 }

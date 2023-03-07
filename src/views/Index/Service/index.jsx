@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Service() {
+export function ServiceSection () {
   return (
     <section className="flex flex-col lg:flex-row justify-center items-center lg:px-52 bg-[#121423] max-w-[1200px] mx-auto rounded-2xl p-20">
       <div className=" flex flex-col items-center gap-4 text-white">

@@ -1,18 +1,15 @@
-import About from "@/modules/@about/components/About";
-import Footer from "@/modules/@footer/components/Footer";
-import Projects from "@/modules/@projects/components/Projects";
-import Service from "@/modules/@service/Service";
-import Layout from "@/layouts/Layout";
-import ViewMain from "@/views/ViewMain";
+import { IndexView } from "@/views/Index";
+import Head from "next/head";
 
-export default function Home() {
+const IndexPage = () => {
   return (
     <>
-      <ViewMain />
-      <Projects />
-      <About />
-      <Service />
-      <Footer />
+      <Head>
+        <title>Aimet Company - Software Development for enterprise</title>
+      </Head>
+      <IndexView />
     </>
   );
-}
+};
+
+export default IndexPage;

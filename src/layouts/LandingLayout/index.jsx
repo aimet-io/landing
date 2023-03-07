@@ -1,8 +1,8 @@
-import Nav from "@/modules/@nav/components/Nav";
 import Head from "next/head";
-import React from "react";
+import { Footer } from "./Footer";
+import { Nav } from "./Nav";
 
-export default function Layout({ children, title }) {
+export function LandingLayout ({ children, title }) {
   return (
     <>
       <Head>
@@ -15,6 +15,7 @@ export default function Layout({ children, title }) {
       <div className="w-full max-w-full">
         <Nav />
         <main>{children}</main>
+        <Footer />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import Link from "next/link";
 
-export default function Projects() {
+export function ProjectsSection() {
   return (
     <section className="flex flex-col justify-center items-center max-w-full">
       <h2 className="text-white text-3xl mt-2 mb-5">Our portfolio</h2>
@@ -25,12 +25,10 @@ export default function Projects() {
             },
           }}
           slidesPerView={3}
-
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-
           loop={true}
         >
           <SwiperSlide>
