@@ -12,7 +12,7 @@ export function Nav() {
             className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
             href="/"
           >
-            <Image src="/img/logo-web.png" height={69} width={136} />
+            <Image src="/img/logo-web.png" alt="Logo" height={69} width={136} />
           </Link>
           <button
             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"

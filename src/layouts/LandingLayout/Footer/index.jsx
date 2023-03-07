@@ -1,4 +1,10 @@
-import { EMAIL_CONTACT } from "@/config";
+import {
+  COMPANY_EMAIL,
+  COMPANY_FB,
+  COMPANY_INSTAGRAM,
+  COMPANY_PHONE,
+} from "@/config";
+import Link from "next/link";
 import {
   AiOutlineMail,
   AiOutlineFacebook,
@@ -16,27 +22,29 @@ export function Footer() {
             <li>
               <a href="#" className="flex gap-2 items-center group">
                 <AiOutlineWhatsApp className="group-hover:text-[#FFC700]" />
-                <span className="group-hover:text-[#FFC700]">99999999</span>
+                <span className="group-hover:text-[#FFC700]">
+                  {COMPANY_PHONE}
+                </span>
               </a>
             </li>
             <li>
               <a href="#" className="flex gap-2 items-center group">
                 <AiOutlineMail className="group-hover:text-[#FFC700]" />
                 <span className="group-hover:text-[#FFC700]">
-                  {EMAIL_CONTACT}
+                  {COMPANY_EMAIL}
                 </span>
               </a>
             </li>
             <li className="flex gap-6 items-center">
-              <a href="#">
+              <a href={COMPANY_FB} target="_blank">
                 <AiOutlineFacebook size={20} />
               </a>
-              <a href="#">
+              <a href={COMPANY_INSTAGRAM} target="_blank">
                 <AiOutlineInstagram size={20} />
               </a>
-              <a href="#">
+              {/* <a href="#">
                 <FaTiktok size={16} />
-              </a>
+              </a> */}
             </li>
           </ul>
         </div>
@@ -44,19 +52,19 @@ export function Footer() {
         <div>
           <ul className="flex flex-col gap-6">
             <li>
-              <a href="#" className="hover:underline">
-                About
-              </a>
+              <Link href="/about-us" className="hover:underline">
+                About Us
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/services" className="hover:underline">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                Projects
-              </a>
+              <Link href="/portfolio" className="hover:underline">
+                Portfolio
+              </Link>
             </li>
           </ul>
         </div>
@@ -64,19 +72,19 @@ export function Footer() {
         <div>
           <ul className="flex flex-col gap-6">
             <li>
-              <a href="#" className="hover:underline">
-                About
-              </a>
+              <Link href="/about-us" className="hover:underline">
+                About Us
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/services" className="hover:underline">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                Projects
-              </a>
+              <Link href="/portfolio" className="hover:underline">
+                Portfolio
+              </Link>
             </li>
           </ul>
         </div>

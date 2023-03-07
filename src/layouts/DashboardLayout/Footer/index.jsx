@@ -1,4 +1,4 @@
-import { COMPANY_NAME, EMAIL_CONTACT } from "@/config";
+import { COMPANY_NAME, EMAIL_CONTACT, PHONE_CONTACT } from "@/config";
 import {
   AiOutlineMail,
   AiOutlineFacebook,
@@ -16,7 +16,7 @@ export function Footer() {
             <li>
               <a href="#" className="flex gap-2 items-center group">
                 <AiOutlineWhatsApp className="group-hover:text-[#FFC700]" />
-                <span className="group-hover:text-[#FFC700]">99999999</span>
+                <span className="group-hover:text-[#FFC700]">{PHONE_CONTACT}</span>
               </a>
             </li>
             <li>

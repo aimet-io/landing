@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function ProjectsSection() {
   return (
-    <section className="flex flex-col justify-center items-center max-w-full">
+    <section className="flex flex-col justify-center items-center max-w-full my-5">
       <h2 className="text-white text-3xl mt-2 mb-5">Our portfolio</h2>
       <div className="w-[980px]  px-4 text-white max-w-full overflow-hidden">
         <Swiper
