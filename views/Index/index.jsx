@@ -15,6 +15,8 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import TeamSlider from "@/components/Slider/TeamSlider";
 import VideoModal from "@/components/VideoModal";
 import TimelineSlider from "@/components/Slider/TimelineSlider";
+import { useTranslation } from 'next-i18next'
+
 
 export default function Home() {
 
@@ -54,6 +56,8 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const { t } = useTranslation("index")
+
   return (
     <>
       {/* Start Hero Section */}
@@ -64,7 +68,8 @@ export default function Home() {
             Our Blood Line
           </>
         }
-        subtitle="We deliver best problem solving solution for our client and provide finest finishing product in present and upcoming future."
+        subtitle={t("subtitle")}
+        // subtitle="We deliver best problem solving solution for our client and provide finest finishing product in present and upcoming future."
         btnText="Get a Quote"
         btnLink="/contact"
         scrollDownId="#service"
@@ -153,7 +158,7 @@ export default function Home() {
       <Div>
         <Div className="container">
           <SectionHeading
-            title="Portfolio to explore"
+            title={t("portfolio.title")}
             subtitle="Latest Projects"
             variant="cs-style1 text-center"
           />

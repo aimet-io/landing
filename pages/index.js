@@ -1,7 +1,7 @@
 import Home from "@/views/Index";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Index = () => {
   const { t } = useTranslation("index");

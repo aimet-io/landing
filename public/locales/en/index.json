@@ -1,3 +1,7 @@
 {
-  "title": "Home"
+  "title": "Home",
+  "subtitle": "English",
+  "portfolio": {
+    "title": "Portfolio's Title"
+  }
 }
