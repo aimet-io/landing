@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
 import Card from "@/components/Card";
 import FunFact from "@/components/FunFact";
 import Hero from "@/components/Hero";
@@ -14,10 +15,8 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import TeamSlider from "@/components/Slider/TeamSlider";
 import VideoModal from "@/components/VideoModal";
 import TimelineSlider from "@/components/Slider/TimelineSlider";
-import { pageTitle } from "@/helper";
 
 export default function Home() {
-  pageTitle("Home");
 
   // Hero Social Links
   const heroSocialLinks = [
