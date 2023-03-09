@@ -1,7 +1,15 @@
-import WaterWave from 'react-water-wave';
-import Div from '../Div';
-import Button from '../Button';
-import VerticalLinks from '../VerticalLinks';
+import dynamic from "next/dynamic";
+import Div from "../Div";
+import Button from "../Button";
+import VerticalLinks from "../VerticalLinks";
+
+const WaterWave = dynamic(
+  () => import("react-water-wave").then((mod) => mod.default),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
 
 export default function Hero3({
   title,
@@ -20,7 +28,7 @@ export default function Hero3({
         {() => (
           <Div className="container">
             <Div className="cs-hero_text text-center">
-              <h1 className="cs-hero_title">{(title)}</h1>
+              <h1 className="cs-hero_title">{title}</h1>
               <Button btnLink={btnLink} btnText={btnText} />
             </Div>
           </Div>
