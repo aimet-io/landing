@@ -7,8 +7,11 @@ import Div from "@/components/Div";
 import SectionHeading from "@/components/SectionHeading";
 import TeamSlider from "@/components/Slider/TeamSlider";
 import Spacing from "@/components/Spacing";
+import { useTranslation } from "next-i18next";
 
 export function AboutView() {
+  const { t } = useTranslation("about");
+
   pageTitle("About");
 
   const funfaceData = [
@@ -36,7 +39,7 @@ export function AboutView() {
     <>
       {/* Start Page Heading Section */}
       <PageHeading
-        title="About Us"
+        title={t("heading.title")}
         bgSrc="images/about_hero_bg.jpeg"
         pageLinkText="About Us"
       />
@@ -152,7 +155,12 @@ export function AboutView() {
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title={<>Awesome team <br/>members</>}
+          title={
+            <>
+              Awesome team <br />
+              members
+            </>
+          }
           subtitle="Our Team"
           variant="cs-style1"
         />
