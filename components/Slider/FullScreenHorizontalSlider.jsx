@@ -1,9 +1,9 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination, Navigation } from 'swiper';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
-import parse from 'html-react-parser';
+
 import Div from '../Div';
 
 export default function FullScreenHorizontalSlider({ data }) {

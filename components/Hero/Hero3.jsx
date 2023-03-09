@@ -1,5 +1,3 @@
-import React from 'react';
-import parse from 'html-react-parser';
 import WaterWave from 'react-water-wave';
 import Div from '../Div';
 import Button from '../Button';

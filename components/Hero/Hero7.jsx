@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Div from '../Div';
 import FullScreenVerticalSlider from '../Slider/FullScreenVerticalSlider';
 import VerticalLinks from '../VerticalLinks';

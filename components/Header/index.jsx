@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { default as Link, default as  NavLink } from "next/link";
 import SocialWidget from "../Widget/SocialWidget";
 import Newsletter from "../Widget/Newsletter";
-// import "./header.scss";
 import ContactInfoWidget from "../Widget/ContactInfoWidget";
 import Div from "../Div";
 import DropDown from "./DropDown";
 import Logo from "../Logo";
+// import "./header.scss";
 
 export default function Header({ variant }) {
   const [isSticky, setIsSticky] = useState(false);

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Portfolio from '../Portfolio';
 import Div from '../Div';
 import Slider from 'react-slick';
