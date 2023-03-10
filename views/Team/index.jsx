@@ -114,7 +114,7 @@ export function TeamView() {
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title="Meet our awesome <br/>team members"
+          title={<>Meet our awesome <br/>team members</>}
           subtitle="Our Team"
           variant="cs-style1 text-center"
         />

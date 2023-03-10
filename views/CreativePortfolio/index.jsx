@@ -121,13 +121,13 @@ export function CreativePortfolioView() {
         <Spacing lg="90" md="45" />
       </Div>
       <CaseStudy
-        title="Analysis lead <br /> more efficiently"
+        title={<>Analysis lead <br /> more efficiently</>}
         bgUrl="/images/case_study_2.jpeg"
         href="/case-study/case-study-details"
         variant="cs-style2"
       />
       <CaseStudy
-        title="Ubar food app <br /> case study"
+        title={<>Ubar food app <br /> case study</>}
         bgUrl="/images/case_study_1.jpeg"
         href="/case-study/case-study-details"
       />
