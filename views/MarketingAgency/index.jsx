@@ -117,7 +117,7 @@ export function MarketingAgencyView() {
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title="Providing best <br/>pricing for client"
+          title={<>Providing best <br/>pricing for client</>}
           subtitle="Pricing & Packaging"
         />
         <Spacing lg="85" md="40" />
