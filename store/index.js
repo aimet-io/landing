@@ -11,8 +11,8 @@ export const useStore = (...args) => {
 };
 
 let store = {
-  projects: [],
-  setProjects: (projects) => set((state) => ({ ...state, projects })),
+  portfolioProjects: [],
+  setPortfolioProjects: (portfolioProjects) => set((state) => ({ ...state, portfolioProjects })),
 };
 
 export const initStore = (initialData = {}) => {

@@ -32,13 +32,13 @@ const defaultPortfolio = [
 ];
 
 export default function PortfolioSlider() {
-  const projects = useStore((store) => store.projects);
+  const portfolioProjects = useStore((store) => store.portfolioProjects);
 
   const portfolioData =
-    projects.length < 4
+  portfolioProjects.length < 4
       ? defaultPortfolio
           .concat(
-            projects.map(
+            portfolioProjects.map(
               ({
                 attributes: {
                   title,
@@ -58,7 +58,7 @@ export default function PortfolioSlider() {
             )
           )
           .flat()
-      : projects;
+      : portfolioProjects;
 
   /** Slider Settings **/
   const settings = {

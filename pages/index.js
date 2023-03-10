@@ -18,14 +18,14 @@ const Index = () => {
 };
 
 export async function getStaticProps({ locale }) {
-  const projects = await fetchAPI("/portfolio-projects", {
+  const portfolioProjects = await fetchAPI("/portfolio-projects", {
     populate: "*",
   }).then((res) => res.data);
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "index"])),
-      initialData: { projects },
+      initialData: { portfolioProjects },
     },
     revalidate: 1,
   };
