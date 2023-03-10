@@ -1,51 +1,55 @@
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'next-i18next';
 
 import Slider from 'react-slick';
 import Div from '../Div';
 import Timeline from '../Timeline';
 
 export default function TimelineSlider() {
+  const { t } = useTranslation("index")
+
   const timelineData = [
+    
     [
       {
         year: '2019',
-        name: 'Google awards',
-        position: 'Website of the day',
-        type: 'Mobile exelence',
+        name: 'Google Awards',
+        position: t("awards.position"),
+        type: t("awards.type"),
       },
       {
         year: '2021',
-        name: 'CSS awards design',
-        position: 'Honorable mention',
-        type: 'Desktop exelence',
+        name: 'CSS Awards Design',
+        position: t("awards.position2"),
+        type: t("awards.type2"),
       },
     ],
     [
       {
         year: '2020',
-        name: 'New technology innovation',
-        position: 'Honorable mention',
-        type: 'Desktop exelence',
+        name: t("awards.name3"),
+        position: t("awards.position3"),
+        type: t("awards.type3"),
       },
       {
         year: '2022',
-        name: 'UI/UX design of the month',
-        position: 'Website of the day',
-        type: 'Mobile exelence',
+        name: t("awards.name4"),
+        position: t("awards.position4"),
+        type: t("awards.type4"),
       },
     ],
     [
       {
         year: '2019',
-        name: 'Google awards',
-        position: 'Website of the day',
-        type: 'Mobile exelence',
+        name: 'Google Awards',
+        position: t("awards.position5"),
+        type: t("awards.type5"),
       },
       {
         year: '2021',
-        name: 'CSS awards design',
-        position: 'Honorable mention',
-        type: 'Desktop exelence',
+        name: 'CSS Awards Design',
+        position: t("awards.position6"),
+        type: t("awards.type6"),
       },
     ],
   ];
