@@ -12,6 +12,7 @@ export const useStore = (...args) => {
 
 let store = {
   portfolioProjects: [],
+  teamAimet: [],
   setPortfolioProjects: (portfolioProjects) => set((state) => ({ ...state, portfolioProjects })),
 };
 
