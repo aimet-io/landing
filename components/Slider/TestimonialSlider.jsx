@@ -4,40 +4,43 @@ import { Icon } from '@iconify/react';
 import Testimonial from '../Testimonial';
 import Div from '../Div';
 import Spacing from '../Spacing';
+import { useTranslation } from 'next-i18next';
+
 export default function TestimonialSlider() {
+  const { t } = useTranslation("index");
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
   const testimonialData = [
     {
       testimonialThumb: '/images/testimonial_1.jpeg',
       testimonialText:
-        'I wish I would have thought of it first. Creative agency is the most tech valuable business resource we have ever purchased. Dude your stuff  is the bomb! eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt to the explicabo.',
+        t("testimonial.text"),
       avatarName: 'Ahon Monsery',
-      avatarDesignation: 'CEO AT TECH',
+      avatarDesignation: t("testimonial.designation"),
       ratings: '4',
     },
     {
       testimonialThumb: '/images/testimonial_2.jpeg',
       testimonialText:
-        'I wish I would have thought of it first. Creative agency is the most tech valuable business resource we have ever purchased. Dude your stuff  is the bomb! eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt to the explicabo.',
+      t("testimonial.text2"),
       avatarName: 'Ahon Monsery',
-      avatarDesignation: 'CEO AT TECH',
+      avatarDesignation: t("testimonial.designation2"),
       ratings: '5',
     },
     {
       testimonialThumb: '/images/testimonial_3.jpeg',
       testimonialText:
-        'I wish I would have thought of it first. Creative agency is the most tech valuable business resource we have ever purchased. Dude your stuff  is the bomb! eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt to the explicabo.',
+      t("testimonial.text3"),
       avatarName: 'Ahon Monsery',
-      avatarDesignation: 'CEO AT TECH',
+      avatarDesignation: t("testimonial.designation3"),
       ratings: '4.5',
     },
     {
       testimonialThumb: '/images/testimonial_1.jpeg',
       testimonialText:
-        'I wish I would have thought of it first. Creative agency is the most tech valuable business resource we have ever purchased. Dude your stuff  is the bomb! eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt to the explicabo.',
+      t("testimonial.text3"),
       avatarName: 'Ahon Monsery',
-      avatarDesignation: 'CEO AT TECH',
+      avatarDesignation: t("testimonial.designation4"),
       ratings: '3.5',
     },
   ];
