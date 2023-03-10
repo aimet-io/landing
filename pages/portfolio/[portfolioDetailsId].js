@@ -6,7 +6,7 @@ const PortfolioDetailsPage = ({ project }) => {
   return <PortfolioDetailsView project={project} />;
 };
 
-export async function getStaticProps({ params: { portfolioDetailsId } }) {
+export async function getStaticProps({ locale, params: { portfolioDetailsId } }) {
   const projects = await fetchAPI("/portfolio-projects", {
     populate: "*",
   }).then((res) => res.data);
