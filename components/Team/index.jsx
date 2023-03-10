@@ -12,27 +12,31 @@ export default function Team({memberImage, memberName, memberDesignation, member
           <Div className="cs-member_overlay" />
         </Div>
         <Div className="cs-member_info">
-          <h2 className="cs-member_name"><Link href="/team/team-details">{memberName}</Link></h2>
-          <Div className="cs-member_designation">{memberDesignation}</Div>
+          <h2 style={{
+            textShadow: '0 0 8px rgba(0,0,0,0.8)',
+          }} className="cs-member_name"><Link  href="/team/team-details">{memberName}</Link></h2>
+          <p className="cs-member_designation text-[17px]" style={{
+            textShadow: '0 0 8px rgba(0,0,0,0.8)',
+          }}>{memberDesignation}</p>
         </Div>
         <Div className="cs-member_social cs-primary_color">
           {memberSocial.linkedin && (
-            <Link href={memberSocial.linkedin}>
+            <Link target="_blank" href={memberSocial.linkedin}>
               <Icon icon="fa6-brands:linkedin-in" />                   
             </Link>
           )}
           {memberSocial.twitter && (
-            <Link href={memberSocial.twitter}>
+            <Link target="_blank" href={memberSocial.twitter}>
               <Icon icon="fa-brands:twitter" />                                        
             </Link>
           )}
-          {memberSocial.youtube && (
-            <Link href={memberSocial.youtube}>
-              <Icon icon="fa-brands:youtube" />                     
+          {memberSocial.github && (
+            <Link target="_blank" href={memberSocial.github}>
+              <Icon icon="fa-brands:github" />                     
             </Link>
           )}
           {memberSocial.facebook && (
-            <Link href={memberSocial.facebook}>
+            <Link target="_blank" href={memberSocial.facebook}>
               <Icon icon="fa-brands:facebook-f" />                    
             </Link>
           )}
