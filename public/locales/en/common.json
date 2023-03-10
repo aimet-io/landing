@@ -1,3 +1,32 @@
 {
-    
+  "footer": {
+    "text": "Welcome to Aimet",
+    "contactUs": "Contact us",
+    "services": {
+      "title": "Services"
+    },
+    "newsLetter": {
+      "title": "Subscribe",
+      "subtitle": "We will inform you of our news and promotions.",
+      "placeholder": "example@gmail.com",
+      "send": "Send"
+    },
+
+    "copyright": {
+      "title": "Terms of Use",
+      "title2": "Privacy Policies"
+    }
+  },
+
+  "heading": {
+    "headerHeading": "Do you have a project in",
+    "headerHeading2": "mind? Keep in touch with us",
+    "contactUs": "Contact us",
+    "newsLetter": {
+      "title": "Subscribe",
+      "subtitle": "We will inform you of our news and promotions.",
+      "placeholder": "example@gmail.com",
+      "send": "Send"
+    }
+  }
 }
