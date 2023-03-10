@@ -16,7 +16,7 @@ export async function getStaticProps({ locale }) {
       ...(await serverSideTranslations(locale, ["common", "portfolio"])),
       initialData: { portfolioProjects },
     },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
 
