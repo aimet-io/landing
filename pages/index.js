@@ -1,7 +1,8 @@
-import Home from "@/views/Index";
+import { IndexView } from "@/views/Index";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { fetchAPI } from "@/lib/strapi/api";
 
 const Index = () => {
   const { t } = useTranslation("index");
@@ -11,16 +12,22 @@ const Index = () => {
       <Head>
         <title>{t("title")}</title>
       </Head>
-      <Home />
+      <IndexView />
     </>
   );
 };
 
 export async function getStaticProps({ locale }) {
+  const projects = await fetchAPI("/portfolio-projects", {
+    populate: "*",
+  }).then((res) => res.data);
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "index"])),
+      initialData: { projects },
     },
+    revalidate: 1,
   };
 }
 

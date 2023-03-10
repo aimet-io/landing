@@ -15,10 +15,10 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import TeamSlider from "@/components/Slider/TeamSlider";
 import VideoModal from "@/components/VideoModal";
 import TimelineSlider from "@/components/Slider/TimelineSlider";
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from "next-i18next";
 
-
-export default function Home() {
+export function IndexView() {
+  const { t } = useTranslation("index");
 
   // Hero Social Links
   const heroSocialLinks = [
@@ -56,7 +56,6 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  const { t } = useTranslation("index")
 
   return (
     <>
@@ -211,7 +210,12 @@ export default function Home() {
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title={<>Awesome team <br/>members</>}
+          title={
+            <>
+              Awesome team <br />
+              members
+            </>
+          }
           subtitle="Our Team"
           variant="cs-style1"
         />
@@ -267,7 +271,12 @@ export default function Home() {
       {/* Start CTA Section */}
       <Div className="container">
         <Cta
-          title={<>Let’s disscuse make <br />something <i className="mr-2">cool</i> together</>}
+          title={
+            <>
+              Let’s disscuse make <br />
+              something <i className="mr-2">cool</i> together
+            </>
+          }
           btnText="Apply For Meeting"
           btnLink="/contact"
           bgSrc="/images/cta_bg.jpeg"
