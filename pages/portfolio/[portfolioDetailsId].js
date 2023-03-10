@@ -1,5 +1,6 @@
 import { fetchAPI } from "@/lib/strapi/api";
 import { PortfolioDetailsView } from "@/views/PortfolioDetails";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const PortfolioDetailsPage = ({ project }) => {
   return <PortfolioDetailsView project={project} />;
@@ -15,7 +16,10 @@ export async function getStaticProps({ params: { portfolioDetailsId } }) {
   );
 
   return {
-    props: { project },
+    props: { 
+      ...(await serverSideTranslations(locale, ["common"])),
+      project
+    },
     // revalidate: 1,
   };
 }
