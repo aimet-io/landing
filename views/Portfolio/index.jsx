@@ -6,12 +6,14 @@ import Portfolio from "@/components/Portfolio";
 import Div from "@/components/Div";
 import SectionHeading from "@/components/SectionHeading";
 import Spacing from "@/components/Spacing";
+import { useStore } from "@/store";
 
-export function PortfolioView({ projects }) {
+export function PortfolioView() {
+  const portfolioProjects = useStore(store => store.portfolioProjects)
   const [active, setActive] = useState("all");
   const [itemShow, setItemShow] = useState(7);
 
-  const portfolioData = projects.map(({ attributes }) => {
+  const portfolioData = portfolioProjects.map(({ attributes }) => {
     const {
       title,
       Category,
@@ -46,7 +48,7 @@ export function PortfolioView({ projects }) {
     <>
       <PageHeading
         title="Portfolio"
-        bgSrc="images/portfolio_hero_bg.jpeg"
+        bgSrc="/images/portfolio_hero_bg.jpeg"
         pageLinkText="Portfolio"
       />
       <Spacing lg="145" md="80" />

@@ -15,11 +15,11 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import TeamSlider from "@/components/Slider/TeamSlider";
 import VideoModal from "@/components/VideoModal";
 import TimelineSlider from "@/components/Slider/TimelineSlider";
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from "next-i18next";
 
+export function IndexView() {
+  const { t } = useTranslation("index");
 
-export default function Home() {
-  const { t } = useTranslation("index")
   // Hero Social Links
   const heroSocialLinks = [
     {
@@ -55,8 +55,6 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  
 
   return (
     <>

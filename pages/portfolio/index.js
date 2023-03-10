@@ -1,17 +1,21 @@
 import { PortfolioView } from "@/views/Portfolio";
 import { fetchAPI } from "@/lib/strapi/api";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const PortfolioPage = ({ projects }) => {
-  return <PortfolioView projects={projects} />;
+const PortfolioPage = () => {
+  return <PortfolioView />;
 };
 
-export async function getStaticProps() {
-  const projects = await fetchAPI("/portfolio-projects", {
+export async function getStaticProps({ locale }) {
+  const portfolioProjects = await fetchAPI("/portfolio-projects", {
     populate: "*",
   }).then((res) => res.data);
 
   return {
-    props: { projects },
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "portfolio"])),
+      initialData: { portfolioProjects },
+    },
     revalidate: 1,
   };
 }
