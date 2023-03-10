@@ -33,21 +33,21 @@ export function IndexView() {
   ];
 
   // FunFact Data
-  const funfaceData = [
+  const funfactData = [
     {
-      title: "Global Happy Clients",
+      title: t("funfactData.title1"),
       factNumber: "40K",
     },
     {
-      title: "Project Completed",
+      title: t("funfactData.title2"),
       factNumber: "50K",
     },
     {
-      title: "Team Members",
+      title: t("funfactData.title3"),
       factNumber: "245",
     },
     {
-      title: "Digital products",
+      title: t("funfactData.title4"),
       factNumber: "550",
     },
   ];
@@ -56,23 +56,22 @@ export function IndexView() {
     window.scrollTo(0, 0);
   }, []);
 
-
   return (
     <>
       {/* Start Hero Section */}
       <Hero
         title={
           <>
-            Creativity In <br />
-            Our Blood Line
+            {t("hero.title")} <br />
+            {t("hero.title2")}
           </>
         }
         subtitle={t("subtitle")}
         // subtitle="We deliver best problem solving solution for our client and provide finest finishing product in present and upcoming future."
-        btnText="Get a Quote"
+        btnText={t("hero.btnText")}
         btnLink="/contact"
         scrollDownId="#service"
-        socialLinksHeading="Follow Us"
+        socialLinksHeading={t("hero.socialLinksHeading")}
         heroSocialLinks={heroSocialLinks}
         bgImageUrl="/images/home/pintura-neon-abstracta.jpg"
       />
@@ -82,9 +81,9 @@ export function IndexView() {
       <div className="container">
         <FunFact
           variant="cs-type1"
-          title="Our fun fact"
-          subtitle="Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
-          data={funfaceData}
+          title={t("funfact.title")}
+          subtitle={t("funfact.subtitle")}
+          data={funfactData}
         />
       </div>
       {/* End FunFact Section */}
@@ -96,9 +95,9 @@ export function IndexView() {
           <Div className="row">
             <Div className="col-xl-4">
               <SectionHeading
-                title="Services we can help you with"
-                subtitle="What Can We Do"
-                btnText="See All Services"
+                title={t("services.title")}
+                subtitle={t("services.subtitle")}
+                btnText={t("services.btnText")}
                 btnLink="/service"
               />
               <Spacing lg="90" md="45" />
@@ -108,7 +107,7 @@ export function IndexView() {
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                 <Div className="col-lg-3 col-sm-6">
                   <Card
-                    title="UI/UX design"
+                    title="UI/UX Design"
                     link="/service/service-details"
                     src="/images/service_1.jpeg"
                     alt="Service"
@@ -158,7 +157,7 @@ export function IndexView() {
         <Div className="container">
           <SectionHeading
             title={t("portfolio.title")}
-            subtitle="Latest Projects"
+            subtitle={t("portfolio.subtitle")}
             variant="cs-style1 text-center"
           />
           <Spacing lg="90" md="45" />
@@ -177,8 +176,8 @@ export function IndexView() {
           <Div className="row">
             <Div className="col-xl-4">
               <SectionHeading
-                title="We get multiple awards"
-                subtitle="Our Awards"
+                title={t("awards.title")}
+                subtitle={t("awards.subtitle")}
                 variant="cs-style1"
               />
               <Spacing lg="90" md="45" />
@@ -195,8 +194,7 @@ export function IndexView() {
       <Spacing lg="130" md="70" />
       <Div className="container">
         <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
-          Our agile process is ability to adapt and respond to change. Agile
-          organizations view change as an opportunity, not a threat.
+          {t("videoBlock.text")}
         </h2>
         <Spacing lg="70" md="70" />
         <VideoModal
@@ -210,13 +208,8 @@ export function IndexView() {
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title={
-            <>
-              Awesome team <br />
-              members
-            </>
-          }
-          subtitle="Our Team"
+          title={<>{t("team.title")} <br/>{t("team.title2")}</>}
+          subtitle={t("team.subtitle")}
           variant="cs-style1"
         />
         <Spacing lg="85" md="45" />
@@ -257,7 +250,7 @@ export function IndexView() {
 
       {/* Start MovingText Section */}
       <Spacing lg="125" md="70" />
-      <MovingText text="Our reputed world wide partners" />
+      <MovingText text={t("movingText.text")} />
       <Spacing lg="105" md="70" />
       {/* End MovingText Section */}
 
@@ -271,13 +264,8 @@ export function IndexView() {
       {/* Start CTA Section */}
       <Div className="container">
         <Cta
-          title={
-            <>
-              Let’s disscuse make <br />
-              something <i className="mr-2">cool</i> together
-            </>
-          }
-          btnText="Apply For Meeting"
+          title={<>{t("cta.title")} <br />{t("cta.title2")} <i className="mr-2">{t("cta.title3")}</i> {t("cta.title4")}</>}
+          btnText={t("cta.btnText")}
           btnLink="/contact"
           bgSrc="/images/cta_bg.jpeg"
         />
