@@ -28,5 +28,9 @@
       "placeholder": "example@gmail.com",
       "send": "Send"
     }
+  },
+
+  "pageHeading": {
+    "home": "Home"
   }
 }

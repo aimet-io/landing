@@ -110,7 +110,7 @@ export function TeamView() {
     <>
       <PageHeading
         title={t("heading.titlePrincipal.title")}
-        bgSrc="images/team_hero_bg.jpeg"
+        bgSrc="/images/team_hero_bg.jpeg"
         pageLinkText={t("heading.titlePrincipal.pageLinkText")}
       />
       <Spacing lg="145" md="80" />

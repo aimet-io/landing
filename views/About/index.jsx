@@ -40,7 +40,7 @@ return (
     {/* Start Page Heading Section */}
     <PageHeading
       title={t("heading.title")}
-      bgSrc="images/about_hero_bg.jpeg"
+      bgSrc="/images/about_hero_bg.jpeg"
       pageLinkText="About Us"
     />
     {/* End Page Heading Section */}

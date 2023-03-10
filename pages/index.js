@@ -4,8 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { fetchAPI } from "@/lib/strapi/api";
 
-
-
 const Index = () => {
   const { t } = useTranslation("index");
 
@@ -25,9 +23,7 @@ export async function getStaticProps({ locale }) {
   }).then((res) => res.data);
 
   const teamAimet = await fetchAPI("/team-aimets", {
-
     populate: "*",
-
   }).then((res) => res.data);
 
   return {
