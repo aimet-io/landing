@@ -5,12 +5,14 @@ const PortfolioDetailsPage = ({ project }) => {
   return <PortfolioDetailsView project={project} />;
 };
 
-export async function getStaticProps({ params: { portfolioDetailsId }}) {
+export async function getStaticProps({ params: { portfolioDetailsId } }) {
   const projects = await fetchAPI("/portfolio-projects", {
     populate: "*",
   }).then((res) => res.data);
-  
-  const project = projects.find(({ attributes: { slug } }) => slug === portfolioDetailsId)
+
+  const project = projects.find(
+    ({ attributes: { slug } }) => slug === portfolioDetailsId
+  );
 
   return {
     props: { project },
@@ -21,9 +23,21 @@ export async function getStaticProps({ params: { portfolioDetailsId }}) {
 export async function getStaticPaths() {
   const data = await fetchAPI("/portfolio-projects").then((res) => res.data);
 
-  const paths = data.map(({ attributes: { slug } }) => ({
-    params: { portfolioDetailsId: slug },
-  }));
+  // esperar soporte de internazionalization en Strapi
+  // (https://docs.strapi.io/dev-docs/plugins/i18n)
+
+  const paths = data
+    .map(({ attributes: { slug } }) => [
+      {
+        params: { portfolioDetailsId: slug },
+        locale: "en",
+      },
+      {
+        params: { portfolioDetailsId: slug },
+        locale: "es",
+      },
+    ])
+    .flat();
 
   return {
     paths,
