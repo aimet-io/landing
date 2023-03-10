@@ -78,7 +78,7 @@ export function PhotographyAgencyView() {
           </Div>
           <Div className="col-lg-6 offset-lg-1">
             <SectionHeading
-              title="We are UK based photography <br/>agency"
+              title={<>We are UK based photography <br/>agency</>}
               subtitle="About Us"
               btnText="Learn More"
               btnLink="/about"
@@ -161,7 +161,7 @@ export function PhotographyAgencyView() {
       <Spacing lg="140" md="70" />
       <Div className="container">
         <SectionHeading
-          title="Providing best <br/>pricing for client"
+          title={<>Providing best <br/>pricing for client</>}
           subtitle="Pricing & Packaging"
         />
         <Spacing lg="85" md="40" />

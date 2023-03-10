@@ -1,12 +1,15 @@
-import { Icon } from '@iconify/react';
-
-import Slider from 'react-slick';
-import Div from '../Div';
-import Team from '../Team';
+import { Icon } from "@iconify/react";
+import Slider from "react-slick";
+import { useStore } from "@/store";
+import Div from "../Div";
+import Team from "../Team";
 
 export default function TeamSlider() {
+  
+  const teamData = useStore(store => store.teamAimet)
+
   /** Team Member Data **/
-  const teamData = [
+  /* const teamData = [
     {
       memberImage: '/images/member_1.jpeg',
       memberName: 'Melon Bulgery',
@@ -62,13 +65,17 @@ export default function TeamSlider() {
         facebook: '/',
       },
     },
-  ];
+  ]; */
   /** Slider Settings **/
+
+
+
+  
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div
       {...props}
       className={
-        'slick-prev slick-arrow' + (currentSlide === 0 ? ' slick-disabled' : '')
+        "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "")
       }
       aria-hidden="true"
       aria-disabled={currentSlide === 0 ? true : false}
@@ -80,8 +87,8 @@ export default function TeamSlider() {
     <div
       {...props}
       className={
-        'slick-next slick-arrow' +
-        (currentSlide === slideCount - 1 ? ' slick-disabled' : '')
+        "slick-next slick-arrow" +
+        (currentSlide === slideCount - 1 ? " slick-disabled" : "")
       }
       aria-hidden="true"
       aria-disabled={currentSlide === slideCount - 1 ? true : false}
@@ -125,16 +132,41 @@ export default function TeamSlider() {
 
   return (
     <Slider {...settings} className="cs-gap-24 cs-arrow_style2">
-      {teamData.map((item, index) => (
+      {teamData?.map((item, index) => (
         <Div key={index}>
           <Team
-            memberImage={item.memberImage}
-            memberName={item.memberName}
-            memberDesignation={item.memberDesignation}
-            memberSocial={item.memberSocial}
+            memberImage={item.attributes.imagen.data.attributes.url}
+            memberName={item.attributes.nombre}
+            memberDesignation={item.attributes.especialidad}
+            memberSocial={
+              {
+                linkedin: item.attributes.linkedin,
+                twitter: item.attributes.twitter,
+                github: item.attributes.github,
+                facebook: item.attributes.facebook,
+              }
+            }
           />
         </Div>
       ))}
+      {teamData?.map((item, index) => (
+        <Div key={index}>
+          <Team
+            memberImage={item.attributes.imagen.data.attributes.url}
+            memberName={item.attributes.nombre}
+            memberDesignation={item.attributes.especialidad}
+            memberSocial={
+              {
+                linkedin: item.attributes.linkedin,
+                twitter: item.attributes.twitter,
+                github: item.attributes.github,
+                facebook: item.attributes.facebook,
+              }
+            }
+          />
+        </Div>
+      ))}
+      
     </Slider>
   );
 }

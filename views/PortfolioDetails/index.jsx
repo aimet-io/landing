@@ -8,6 +8,9 @@ import Spacing from "@/components/Spacing";
 import { useRouter } from "next/router";
 
 export function PortfolioDetailsView({ project }) {
+  const router = useRouter();
+  const params = router.query;
+
   const {
     attributes: {
       title,
@@ -18,17 +21,19 @@ export function PortfolioDetailsView({ project }) {
           attributes: { url: image },
         },
       },
-      portfolio_project_details: {
-        data: dataDetails
-      }
+      portfolio_project_details: { data: dataDetails },
     },
   } = project;
-  const details = dataDetails.map(({ attributes, id }) => ({...attributes, id }))
-  const router = useRouter();
-  const params = router.query;
+
+  const details = dataDetails.map(({ attributes, id }) => ({
+    ...attributes,
+    id,
+  }));
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <PageHeading
@@ -57,17 +62,15 @@ export function PortfolioDetailsView({ project }) {
             <h2 className="cs-font_30 cs-font_26_sm cs-m0">Project Info -</h2>
             <Spacing lg="50" md="30" />
             <Div className="row">
-              {
-                details.map(({ id, label, content }) => (
-                  <Div className="col-6" key={id}>
-                    <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                      {label}:
-                    </h3>
-                    <p className="cs-m0">{content}</p>
-                    <Spacing lg="30" md="30" />
-                  </Div>
-                ))
-              }
+              {details.map(({ id, label, content }) => (
+                <Div className="col-6" key={id}>
+                  <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
+                    {label}:
+                  </h3>
+                  <p className="cs-m0">{content}</p>
+                  <Spacing lg="30" md="30" />
+                </Div>
+              ))}
             </Div>
           </Div>
         </Div>

@@ -16,7 +16,7 @@ export async function getStaticProps({ params: { portfolioDetailsId } }) {
 
   return {
     props: { project },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
 
