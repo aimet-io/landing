@@ -5,35 +5,37 @@ import MenuWidget from '../Widget/MenuWidget'
 import Newsletter from '../Widget/Newsletter'
 import SocialWidget from '../Widget/SocialWidget'
 import TextWidget from '../Widget/TextWidget'
+import { useTranslation } from "next-i18next";
 // import './footer.scss'
 
 export default function Footer({copyrightText, logoSrc, logoAlt, text}) {
+  const { t } = useTranslation("common");
   const copyrightLinks = [
     {
-      title: 'Terms of Use',
+      title: t("footer.copyright.title"),
       href: '/'
     },
     {
-      title: 'Privacy Policy',
+      title: t("footer.copyright.title2"),
       href: '/'
     }
   ]
   
   const serviceMenu = [
     {
-      title: 'UI/UX design',
+      title: 'UI/UX Design',
       href: '/service/service-details'
     },
     {
-      title: 'WP development',
+      title: 'WP Development',
       href: '/service/service-details'
     },
     {
-      title: 'Digital marketing',
+      title: 'Digital Marketing',
       href: '/service/service-details'
     },
     {
-      title: 'React development',
+      title: 'React Development',
       href: '/service/service-details'
     },
   ]
@@ -47,27 +49,27 @@ export default function Footer({copyrightText, logoSrc, logoAlt, text}) {
               <Div className="cs-footer_item">
                 <TextWidget 
                   logoAlt='Logo'
-                  text ='Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.'
+                  text ={t("footer.text")}
                 />
                 <SocialWidget/>
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
-                <MenuWidget menuItems={serviceMenu} menuHeading='Services'/>
+                <MenuWidget menuItems={serviceMenu} menuHeading={t("footer.services.title")}/>
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
-                <ContactInfoWidget title='Contact Us'/>
+                <ContactInfoWidget title={t("footer.contactUs")}/>
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <Newsletter 
-                  title='Subscribe' 
-                  subtitle='At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit.' 
-                  placeholder='example@gmail.com'
+                  title={t("footer.newsLetter.title")}
+                  subtitle={t("footer.newsLetter.subtitle")}
+                  placeholder={t("footer.newsLetter.placeholder")}
                 />
               </Div>
             </Div>
