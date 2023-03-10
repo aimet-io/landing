@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import CustomCursor from "../CustomCursor";
 import Footer from "../Footer";
 import Header from "../Header";
+import WhatsappFloatIcon from "./WhatsappFloatIcon/WhatsappFloatIcon";
 
-export default function Layout({ children }) {
+export default function Layout({ children,test }) {
   const router = useRouter();
-  console.log();
 
   const variantPages = [
     "/creative-portfolio",
@@ -26,6 +26,7 @@ export default function Layout({ children }) {
       {children}
       <CustomCursor />
       <Footer />
+      <WhatsappFloatIcon/>
     </>
   );
 }
