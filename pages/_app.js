@@ -26,6 +26,7 @@ import "@/components/Team/team.scss";
 import "@/components/Testimonial/testimonial.scss";
 import "@/components/Timeline/timeline.scss";
 import "@/components/VerticalLinks/vertical-links.scss";
+import "@/components/Layout/WhatsappFloatIcon/whatsapp-float-icon.scss"
 
 import "@/styles/index.css";
 
