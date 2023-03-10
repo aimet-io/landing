@@ -6,9 +6,11 @@ import ContactInfoWidget from "../Widget/ContactInfoWidget";
 import Div from "../Div";
 import DropDown from "./DropDown";
 import Logo from "../Logo";
+import { useTranslation } from "next-i18next";
 // import "./header.scss";
 
 export default function Header({ variant }) {
+  const { t } = useTranslation("common");
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
@@ -296,17 +298,17 @@ export default function Header({ variant }) {
           </Link>
           <Div className="cs-side_header_box">
             <h2 className="cs-side_header_heading">
-              Do you have a project in your <br /> mind? Keep connect us.
+              {t("heading.headerHeading")} <br /> {t("heading.headerHeading2")}
             </h2>
           </Div>
           <Div className="cs-side_header_box">
-            <ContactInfoWidget title="Contact Us" withIcon />
+            <ContactInfoWidget title={t("heading.contactUs")} withIcon />
           </Div>
           <Div className="cs-side_header_box">
             <Newsletter
-              title="Subscribe"
-              subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
-              placeholder="example@gmail.com"
+              title={t("heading.newsLetter.title")}
+              subtitle={t("heading.newsLetter.subtitle")}
+              placeholder={t("heading.newsLetter.placeholder")}
             />
           </Div>
           <Div className="cs-side_header_box">
