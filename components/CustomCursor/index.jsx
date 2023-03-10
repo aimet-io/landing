@@ -21,10 +21,10 @@ const CustomCursor = () => {
       const mouseX = clientX;
       const mouseY = clientY;
 
-      positionRef.current.mouseX = mouseX - cursorSm.current.clientWidth / 2;
-      positionRef.current.mouseY = mouseY - cursorSm.current.clientHeight / 2;
-      positionRef.current.mouseX = mouseX - cursorLg.current.clientWidth / 2;
-      positionRef.current.mouseY = mouseY - cursorLg.current.clientHeight / 2;
+      positionRef.current.mouseX = mouseX - cursorSm.current?.clientWidth / 2;
+      positionRef.current.mouseY = mouseY - cursorSm.current?.clientHeight / 2;
+      positionRef.current.mouseX = mouseX - cursorLg.current?.clientWidth / 2;
+      positionRef.current.mouseY = mouseY - cursorLg.current?.clientHeight / 2;
     });
 
     return () => {};
