@@ -18,7 +18,7 @@ export function ServicesView() {
     <>
       <PageHeading 
         title='Services'
-        bgSrc='images/service_hero_bg.jpeg'
+        bgSrc='/images/service_hero_bg.jpeg'
         pageLinkText='Services'
       />
       <Spacing lg='150' md='80'/>
