@@ -1,9 +1,13 @@
 
 import Link from 'next/link';
 import Div from '../Div';
-
+import { useTranslation } from "next-i18next";
 export default function PageHeading({ title, bgSrc, pageLinkText }) {
+  const { t } = useTranslation("team");
   return (
+    
+    
+
     <Div
       className="cs-page_heading cs-style1 cs-center text-center cs-bg"
       style={{ backgroundImage: `url(${bgSrc})` }}
@@ -13,7 +17,7 @@ export default function PageHeading({ title, bgSrc, pageLinkText }) {
           <h1 className="cs-page_title cs-font_50 cs-white_color">{title}</h1>
           <ol className="breadcrumb text-uppercase m-0">
             <li className="breadcrumb-item">
-              <Link href="/">Home</Link>
+              <Link href="/">{t("heading.Home")}</Link>
             </li>
             <li className="breadcrumb-item active">{pageLinkText}</li>
           </ol>

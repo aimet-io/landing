@@ -7,6 +7,8 @@ import Spacing from '@/components/Spacing'
 import SocialWidget from '@/components/Widget/SocialWidget'
 
 export function TeamDetailsView() {
+
+  
   pageTitle('Team Member');
   useEffect(() => {
     window.scrollTo(0, 0)
