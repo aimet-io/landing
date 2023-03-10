@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { pageTitle } from "@/helper";
 import Button from "@/components/Button";
 import Cta from "@/components/Cta";
 import PageHeading from "@/components/PageHeading";
@@ -8,48 +7,49 @@ import SectionHeading from "@/components/SectionHeading";
 import Spacing from "@/components/Spacing";
 import { useRouter } from "next/router";
 
-export function PortfolioDetailsView() {
+export function PortfolioDetailsView({ project }) {
+  const {
+    attributes: {
+      title,
+      Category: category,
+      description,
+      image: {
+        data: {
+          attributes: { url: image },
+        },
+      },
+      portfolio_project_details: {
+        data: dataDetails
+      }
+    },
+  } = project;
+  const details = dataDetails.map(({ attributes, id }) => ({...attributes, id }))
   const router = useRouter();
   const params = router.query;
-  pageTitle("Portfolio Details");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
       <PageHeading
-        title="Portfolio Details"
+        title={title}
         bgSrc="/images/service_hero_bg.jpeg"
         pageLinkText={params.portfolioDetailsId}
       />
       <Spacing lg="150" md="80" />
       <Div className="container">
         <img
-          src="/images/portfolio_details_1.jpeg"
+          src={image}
+          referrerPolicy="no-referrer"
           alt="Details"
           className="cs-radius_15 w-100"
         />
         <Spacing lg="90" md="40" />
         <Div className="row">
           <Div className="col-lg-6">
-            <SectionHeading title="Graffiti wall artwork" subtitle="Creative">
+            <SectionHeading title={title} subtitle={category}>
               <Spacing lg="40" md="20" />
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium voltire doloremque laudantium, totam rem aperiam,
-                eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi
-                nesciunt.
-              </p>
-              <Spacing lg="10" md="10" />
-              <p>
-                Ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-                non numquam eius modi tempora incidunt ut labore et dolore
-                magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
-                quis nostrum exercitationem ullam corporis suscipit.
-              </p>
+              <p>{description}</p>
             </SectionHeading>
           </Div>
           <Div className="col-lg-5 offset-lg-1">
@@ -57,41 +57,17 @@ export function PortfolioDetailsView() {
             <h2 className="cs-font_30 cs-font_26_sm cs-m0">Project Info -</h2>
             <Spacing lg="50" md="30" />
             <Div className="row">
-              <Div className="col-6">
-                <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                  Category:
-                </h3>
-                <p className="cs-m0">Artwork</p>
-                <Spacing lg="30" md="30" />
-              </Div>
-              <Div className="col-6">
-                <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                  Location:
-                </h3>
-                <p className="cs-m0">United Kindom</p>
-                <Spacing lg="30" md="30" />
-              </Div>
-              <Div className="col-6">
-                <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                  Software:
-                </h3>
-                <p className="cs-m0">Adobe Illustrator</p>
-                <Spacing lg="30" md="30" />
-              </Div>
-              <Div className="col-6">
-                <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                  Dated:
-                </h3>
-                <p className="cs-m0">14-Aug-2022</p>
-                <Spacing lg="30" md="30" />
-              </Div>
-              <Div className="col-6">
-                <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
-                  Client:
-                </h3>
-                <p className="cs-m0">Andreo Bowla</p>
-                <Spacing lg="30" md="30" />
-              </Div>
+              {
+                details.map(({ id, label, content }) => (
+                  <Div className="col-6" key={id}>
+                    <h3 className="cs-accent_color cs-font_22 cs-font_18_sm cs-m0">
+                      {label}:
+                    </h3>
+                    <p className="cs-m0">{content}</p>
+                    <Spacing lg="30" md="30" />
+                  </Div>
+                ))
+              }
             </Div>
           </Div>
         </Div>
