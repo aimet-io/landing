@@ -8,7 +8,7 @@ const ContactPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "index"])),
+      ...(await serverSideTranslations(locale, ["common", "contact"])),
     },
     // // revalidate: 1,
   };
