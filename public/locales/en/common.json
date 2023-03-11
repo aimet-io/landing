@@ -32,5 +32,19 @@
 
   "pageHeading": {
     "home": "Home"
+  },
+
+  "testimonial": {
+    "text": "I wish I would have thought of it first. Creative agency is the most valuable business resource we have EVER purchased. Your stuff is the bomb! and that's exactly what was said by that truth-finder and, so to speak, the architect of a happy life",
+    "designation": "CEO at Technology",
+
+    "text2": "I wish I would have thought of it first. Creative agency is the most valuable business resource we have EVER purchased. Your stuff is the bomb! and that's exactly what was said by that truth-finder and, so to speak, the architect of a happy life",
+    "designation2": "CEO at Technology",
+
+    "text3": "I wish I would have thought of it first. Creative agency is the most valuable business resource we have EVER purchased. Your stuff is the bomb! and that's exactly what was said by that truth-finder and, so to speak, the architect of a happy life",
+    "designation3": "CEO at Technology",
+
+    "text4": "I wish I would have thought of it first. Creative agency is the most valuable business resource we have EVER purchased. Your stuff is the bomb! and that's exactly what was said by that truth-finder and, so to speak, the architect of a happy life",
+    "designation4": "CEO at Mostro Solutions"
   }
 }

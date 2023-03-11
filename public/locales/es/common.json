@@ -33,5 +33,19 @@
 
   "pageHeading": {
     "home": "Inicio"
+  },
+
+  "testimonial": {
+    "text": "Desearía haberlo pensado primero. La agencia creativa es el recurso comercial de tecnología más valioso que jamás hayamos comprado. ¡Amigo, tus cosas son la bomba! y esas mismas cosas que fueron dichas por aquel descubridor de la verdad y, por así decirlo, el artífice de una vida feliz",
+    "designation": "CEO en Tecnología",
+
+    "text2": "Desearía haberlo pensado primero. La agencia creativa es el recurso comercial de tecnología más valioso que jamás hayamos comprado. ¡Amigo, tus cosas son la bomba! y esas mismas cosas que fueron dichas por aquel descubridor de la verdad y, por así decirlo, el artífice de una vida feliz",
+    "designation2": "CEO en Tecnología",
+
+    "text3": "Desearía haberlo pensado primero. La agencia creativa es el recurso comercial de tecnología más valioso que jamás hayamos comprado. ¡Amigo, tus cosas son la bomba! y esas mismas cosas que fueron dichas por aquel descubridor de la verdad y, por así decirlo, el artífice de una vida feliz",
+    "designation3": "CEO en Tecnología",
+
+    "text4": "Desearía haberlo pensado primero. La agencia creativa es el recurso comercial de tecnología más valioso que jamás hayamos comprado. ¡Amigo, tus cosas son la bomba! y esas mismas cosas que fueron dichas por aquel descubridor de la verdad y, por así decirlo, el artífice de una vida feliz",
+    "designation4": "CEO en Mostro Solutions"
   }
 }
