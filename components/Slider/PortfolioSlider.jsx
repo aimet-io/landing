@@ -33,32 +33,28 @@ const defaultPortfolio = [
 
 export default function PortfolioSlider() {
   const portfolioProjects = useStore((store) => store.portfolioProjects);
-
+  const portfolioProjectsData = portfolioProjects.map(
+    ({
+      attributes: {
+        title,
+        slug,
+        image: {
+          data: {
+            attributes: { url: image },
+          },
+        },
+      },
+    }) => ({
+      title,
+      subtitle: "See Details",
+      href: "/portfolio/" + slug,
+      src: image,
+    })
+  );
   const portfolioData =
-  portfolioProjects.length < 4
-      ? defaultPortfolio
-          .concat(
-            portfolioProjects.map(
-              ({
-                attributes: {
-                  title,
-                  slug,
-                  image: {
-                    data: {
-                      attributes: { url: image },
-                    },
-                  },
-                },
-              }) => ({
-                title,
-                subtitle: "See Details",
-                href: "/portfolio/" + slug,
-                src: image,
-              })
-            )
-          )
-          .flat()
-      : portfolioProjects;
+    portfolioProjects?.length < 4
+      ? defaultPortfolio.concat(portfolioProjectsData).flat()
+      : portfolioProjectsData;
 
   /** Slider Settings **/
   const settings = {
