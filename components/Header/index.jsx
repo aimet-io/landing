@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { default as Link, default as  NavLink } from "next/link";
+import { default as Link, default as NavLink } from "next/link";
 import SocialWidget from "../Widget/SocialWidget";
 import Newsletter from "../Widget/Newsletter";
 import ContactInfoWidget from "../Widget/ContactInfoWidget";
@@ -31,23 +31,23 @@ export default function Header({ variant }) {
           variant ? variant : ""
         } cs-sticky_header ${isSticky ? "cs-sticky_header_active" : ""}`}
       >
-        <Div className="cs-main_header">
-          <Div className="container">
-            <Div className="cs-main_header_in">
-              <Div className="cs-main_header_left">
-                <Link className="cs-site_branding flex items-center" href="/">
-                  <Logo className="mr-2" />
+        <Div className='cs-main_header'>
+          <Div className='container'>
+            <Div className='cs-main_header_in'>
+              <Div className='cs-main_header_left'>
+                <Link className='cs-site_branding flex items-center' href='/'>
+                  <Logo className='mr-2' />
                 </Link>
               </Div>
-              <Div className="cs-main_header_center">
-                <Div className="cs-nav cs-primary_font cs-medium">
+              <Div className='cs-main_header_center'>
+                <Div className='cs-nav cs-primary_font cs-medium'>
                   <ul
-                    className="cs-nav_list"
+                    className='cs-nav_list'
                     style={{ display: `${mobileToggle ? "block" : "none"}` }}
                   >
-                    <li className="menu-item-has-children">
+                    <li className='menu-item-has-children'>
                       <NavLink
-                        href="/service"
+                        href='/service'
                         onClick={() => setMobileToggle(false)}
                       >
                         Services
@@ -56,7 +56,7 @@ export default function Header({ variant }) {
                         <ul>
                           <li>
                             <Link
-                              href="/service/software-development"
+                              href='/service/software-development'
                               onClick={() => setMobileToggle(false)}
                             >
                               Software Development
@@ -64,7 +64,7 @@ export default function Header({ variant }) {
                           </li>
                           <li>
                             <Link
-                              href="/service/ui-ux-design"
+                              href='/service/ui-ux-design'
                               onClick={() => setMobileToggle(false)}
                             >
                               UI/UX Design
@@ -72,7 +72,7 @@ export default function Header({ variant }) {
                           </li>
                           <li>
                             <Link
-                              href="/service/digital-marketing"
+                              href='/service/digital-marketing'
                               onClick={() => setMobileToggle(false)}
                             >
                               Digital Marketing
@@ -83,15 +83,15 @@ export default function Header({ variant }) {
                     </li>
                     <li>
                       <Link
-                        href="/portfolio"
+                        href='/portfolio'
                         onClick={() => setMobileToggle(false)}
                       >
                         Portfolio
                       </Link>
                     </li>
-                    <li className="menu-item-has-children">
+                    <li className='menu-item-has-children'>
                       <NavLink
-                        href="/about"
+                        href='/about'
                         onClick={() => setMobileToggle(false)}
                       >
                         About
@@ -100,7 +100,7 @@ export default function Header({ variant }) {
                         <ul>
                           <li>
                             <Link
-                              href="/team"
+                              href='/team'
                               onClick={() => setMobileToggle(false)}
                             >
                               Team
@@ -109,15 +109,18 @@ export default function Header({ variant }) {
                         </ul>
                       </DropDown>
                     </li>
-                    <li className="menu-item-has-children">
-                      <Link href="/contact" onClick={() => setMobileToggle(false)}>
+                    <li className='menu-item-has-children'>
+                      <Link
+                        href='/contact'
+                        onClick={() => setMobileToggle(false)}
+                      >
                         Contact
                       </Link>
                       <DropDown>
                         <ul>
                           <li>
                             <Link
-                              href="/faq"
+                              href='/faq'
                               onClick={() => setMobileToggle(false)}
                             >
                               FAQ
@@ -135,17 +138,17 @@ export default function Header({ variant }) {
                     }
                     onClick={() => setMobileToggle(!mobileToggle)}
                   >
-                    <span></span>
+                    <span />
                   </span>
                 </Div>
               </Div>
-              <Div className="cs-main_header_right">
-                <Div className="cs-toolbox">
+              <Div className='cs-main_header_right'>
+                <Div className='cs-toolbox'>
                   <span
-                    className="cs-icon_btn"
+                    className='cs-icon_btn'
                     onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
                   >
-                    <span className="cs-icon_btn_in">
+                    <span className='cs-icon_btn_in'>
                       <span />
                       <span />
                       <span />
@@ -165,34 +168,37 @@ export default function Header({ variant }) {
         }
       >
         <button
-          className="cs-close"
+          className='cs-close'
           onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
         />
         <Div
-          className="cs-side_header_overlay"
+          className='cs-side_header_overlay'
           onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
         />
-        <Div className="cs-side_header_in">
-          <Div className="cs-side_header_shape" />
-          <Link className="cs-site_branding flex items-center text-white" href="/">
-            <Logo className="mr-3" />
+        <Div className='cs-side_header_in'>
+          <Div className='cs-side_header_shape' />
+          <Link
+            className='cs-site_branding flex items-center text-white'
+            href='/'
+          >
+            <Logo className='mr-3' />
           </Link>
-          <Div className="cs-side_header_box">
-            <h2 className="cs-side_header_heading">
+          <Div className='cs-side_header_box'>
+            <h2 className='cs-side_header_heading'>
               {t("heading.headerHeading")} <br /> {t("heading.headerHeading2")}
             </h2>
           </Div>
-          <Div className="cs-side_header_box">
+          <Div className='cs-side_header_box'>
             <ContactInfoWidget title={t("heading.contactUs")} withIcon />
           </Div>
-          <Div className="cs-side_header_box">
+          <Div className='cs-side_header_box'>
             <Newsletter
               title={t("heading.newsLetter.title")}
               subtitle={t("heading.newsLetter.subtitle")}
               placeholder={t("heading.newsLetter.placeholder")}
             />
           </Div>
-          <Div className="cs-side_header_box">
+          <Div className='cs-side_header_box'>
             <SocialWidget />
           </Div>
         </Div>
