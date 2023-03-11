@@ -1,9 +1,19 @@
 import { PortfolioView } from "@/views/Portfolio";
 import { fetchAPI } from "@/lib/strapi/api";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
+import { useTranslation } from "next-i18next";
 
 const PortfolioPage = () => {
-  return <PortfolioView />;
+  const { t } = useTranslation("portfolio");
+  return (
+    <>
+      <Head>
+        <title>{t("metaTitle")}</title>
+      </Head>
+      <PortfolioView />
+    </>
+  );
 };
 
 export async function getStaticProps({ locale }) {

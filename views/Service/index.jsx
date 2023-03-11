@@ -10,10 +10,11 @@ import TestimonialSlider from '@/components/Slider/TestimonialSlider'
 import Spacing from '@/components/Spacing'
 
 export function ServicesView() {
-  pageTitle('Service');
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
   return (
     <>
       <PageHeading 
