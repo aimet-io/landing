@@ -6,5 +6,6 @@
     "labelEmail":"Correo",
     "labelProjectType":"Tipo de Proyecto",
     "labelPhone":"Teléfono",
-    "labelDescription":"Descripción"
+    "labelDescription":"Descripción",
+    "button":"Enviar Mensaje"
 }
