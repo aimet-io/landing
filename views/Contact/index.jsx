@@ -6,8 +6,13 @@ import PageHeading from "@/components/PageHeading";
 import SectionHeading from "@/components/SectionHeading";
 import Spacing from "@/components/Spacing";
 import ContactInfoWidget from "@/components/Widget/ContactInfoWidget";
+import { useTranslation } from "next-i18next";
+
 
 export function ContactView() {
+
+  const { t } = useTranslation("contact");
+
   pageTitle("Contact Us");
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,22 +20,17 @@ export function ContactView() {
   return (
     <>
       <PageHeading
-        title="Contact Us"
+        title={t("titlePrincipal")}
         bgSrc="/images/contact_hero_bg.jpeg"
-        pageLinkText="Contact"
+        pageLinkText={t("title")}
       />
       <Spacing lg="150" md="80" />
       <Div className="container">
         <Div className="row">
           <Div className="col-lg-6">
             <SectionHeading
-              title={
-                <>
-                  Do you have a project <br />
-                  in your mind?
-                </>
-              }
-              subtitle="Getting Touch"
+              title={t("subtitleLarge")}
+              subtitle={t("subtitleLittle")}
             />
             <Spacing lg="55" md="30" />
             <ContactInfoWidget withIcon />
@@ -39,27 +39,27 @@ export function ContactView() {
           <Div className="col-lg-6">
             <form action="#" className="row">
               <Div className="col-sm-6">
-                <label className="cs-primary_color">Full Name*</label>
+                <label className="cs-primary_color">{t("labelName")}*</label>
                 <input type="text" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
-                <label className="cs-primary_color">Email*</label>
+                <label className="cs-primary_color">{t("labelEmail")}*</label>
                 <input type="text" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
-                <label className="cs-primary_color">Project Type*</label>
+                <label className="cs-primary_color">{t("labelProjectType")}*</label>
                 <input type="text" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
-                <label className="cs-primary_color">Mobile*</label>
+                <label className="cs-primary_color">{t("labelPhone")}*</label>
                 <input type="text" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-12">
-                <label className="cs-primary_color">Mobile*</label>
+                <label className="cs-primary_color">{t("labelDescription")}*</label>
                 <textarea
                   cols="30"
                   rows="7"
@@ -69,7 +69,7 @@ export function ContactView() {
               </Div>
               <Div className="col-sm-12">
                 <button className="cs-btn cs-style1">
-                  <span>Send Message</span>
+                  <span>{t("btnspan")}</span>
                   <Icon icon="bi:arrow-right" />
                 </button>
               </Div>

@@ -1,4 +1,5 @@
 {
+    "titlePrincipal":"Contact Us",
     "title":"Contact",
     "subtitleLittle":"Getting Touch",
     "subtitleLarge":"Do you have a project in your mind?",
@@ -7,5 +8,5 @@
     "labelProjectType":"Project Type",
     "labelPhone":"Phone Number",
     "labelDescription":"Description",
-    "button":"Send Message"
+    "btnspan":"Send Message"
 }
