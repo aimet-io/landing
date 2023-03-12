@@ -222,31 +222,7 @@ export function IndexView() {
       <TestimonialSlider />
       {/* End Testimonial Section */}
 
-      {/* Start Blog Section */}
-      <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4">
-        <Div className="cs-shape_4"></Div>
-        <Div className="cs-shape_4"></Div>
-        <Div className="container">
-          <Div className="row">
-            <Div className="col-xl-4">
-              <SectionHeading
-                title="Explore recent publication"
-                subtitle="Our Blog"
-                btnText="View More Blog"
-                btnLink="/blog"
-              />
-              <Spacing lg="90" md="45" />
-            </Div>
-            <Div className="col-xl-7 offset-xl-1">
-              <Div className="cs-half_of_full_width">
-                <PostSlider />
-              </Div>
-            </Div>
-          </Div>
-        </Div>
-      </Div>
-      {/* End Blog Section */}
+      {/* <SectionSliderPosts /> */}
 
       {/* Start MovingText Section */}
       <Spacing lg="125" md="70" />
