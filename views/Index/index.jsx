@@ -225,16 +225,16 @@ export function IndexView() {
       {/* <SectionSliderPosts /> */}
 
       {/* Start MovingText Section */}
-      <Spacing lg="125" md="70" />
+      {/* <Spacing lg="125" md="70" />
       <MovingText text={t("movingText.text")} />
-      <Spacing lg="105" md="70" />
+      <Spacing lg="105" md="70" /> */}
       {/* End MovingText Section */}
 
       {/* Start LogoList Section */}
-      <Div className="container">
+      {/* <Div className="container">
         <LogoList />
       </Div>
-      <Spacing lg="150" md="80" />
+      <Spacing lg="150" md="80" /> */}
       {/* End LogoList Section */}
 
       {/* Start CTA Section */}
