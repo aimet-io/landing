@@ -5,8 +5,7 @@ import Div from "../Div";
 import Team from "../Team";
 
 export default function TeamSlider() {
-  
-  const teamData = useStore(store => store.teamAimet)
+  const teamData = useStore((store) => store.teamAimet);
 
   /** Team Member Data **/
   /* const teamData = [
@@ -68,9 +67,6 @@ export default function TeamSlider() {
   ]; */
   /** Slider Settings **/
 
-
-
-  
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div
       {...props}
@@ -138,14 +134,12 @@ export default function TeamSlider() {
             memberImage={item.attributes.imagen.data.attributes.url}
             memberName={item.attributes.nombre}
             memberDesignation={item.attributes.especialidad}
-            memberSocial={
-              {
-                linkedin: item.attributes.linkedin,
-                twitter: item.attributes.twitter,
-                github: item.attributes.github,
-                facebook: item.attributes.facebook,
-              }
-            }
+            memberSocial={{
+              linkedin: item.attributes.linkedin,
+              twitter: item.attributes.twitter,
+              github: item.attributes.github,
+              facebook: item.attributes.facebook,
+            }}
           />
         </Div>
       ))}
@@ -155,18 +149,15 @@ export default function TeamSlider() {
             memberImage={item.attributes.imagen.data.attributes.url}
             memberName={item.attributes.nombre}
             memberDesignation={item.attributes.especialidad}
-            memberSocial={
-              {
-                linkedin: item.attributes.linkedin,
-                twitter: item.attributes.twitter,
-                github: item.attributes.github,
-                facebook: item.attributes.facebook,
-              }
-            }
+            memberSocial={{
+              linkedin: item.attributes.linkedin,
+              twitter: item.attributes.twitter,
+              github: item.attributes.github,
+              facebook: item.attributes.facebook,
+            }}
           />
         </Div>
       ))}
-      
     </Slider>
   );
 }
