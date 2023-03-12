@@ -41,7 +41,7 @@ export async function getStaticProps({
       project,
       initialData: { portfolioProjects }
     },
-    // revalidate: 1,
+    revalidate: 300,
   };
 }
 
