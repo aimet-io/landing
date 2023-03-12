@@ -10,7 +10,11 @@ import { useTranslation } from "next-i18next";
 // import "./header.scss";
 
 export default function Header({ variant }) {
+
+
+
   const { t } = useTranslation("common");
+
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
@@ -50,7 +54,7 @@ export default function Header({ variant }) {
                         href='/service'
                         onClick={() => setMobileToggle(false)}
                       >
-                        Services
+                        {t("header.services")}
                       </NavLink>
                       <DropDown>
                         <ul>
@@ -59,7 +63,7 @@ export default function Header({ variant }) {
                               href='/service/software-development'
                               onClick={() => setMobileToggle(false)}
                             >
-                              Software Development
+                              {t("header.softwareDevelopment")}
                             </Link>
                           </li>
                           <li>
@@ -67,7 +71,7 @@ export default function Header({ variant }) {
                               href='/service/ui-ux-design'
                               onClick={() => setMobileToggle(false)}
                             >
-                              UI/UX Design
+                              {t("header.uiUxDesign")}
                             </Link>
                           </li>
                           <li>
@@ -75,7 +79,7 @@ export default function Header({ variant }) {
                               href='/service/digital-marketing'
                               onClick={() => setMobileToggle(false)}
                             >
-                              Digital Marketing
+                              {t("header.digitalMarketing")}
                             </Link>
                           </li>
                         </ul>
@@ -86,7 +90,7 @@ export default function Header({ variant }) {
                         href='/portfolio'
                         onClick={() => setMobileToggle(false)}
                       >
-                        Portfolio
+                        {t("header.portfolio")}
                       </Link>
                     </li>
                     <li className='menu-item-has-children'>
@@ -94,7 +98,7 @@ export default function Header({ variant }) {
                         href='/about'
                         onClick={() => setMobileToggle(false)}
                       >
-                        About
+                        {t("header.about")}
                       </NavLink>
                       <DropDown>
                         <ul>
@@ -103,7 +107,7 @@ export default function Header({ variant }) {
                               href='/team'
                               onClick={() => setMobileToggle(false)}
                             >
-                              Team
+                              {t("header.team")}
                             </Link>
                           </li>
                         </ul>
@@ -114,7 +118,7 @@ export default function Header({ variant }) {
                         href='/contact'
                         onClick={() => setMobileToggle(false)}
                       >
-                        Contact
+                        {t("header.contact")}
                       </Link>
                       <DropDown>
                         <ul>
@@ -123,7 +127,7 @@ export default function Header({ variant }) {
                               href='/faq'
                               onClick={() => setMobileToggle(false)}
                             >
-                              FAQ
+                              {t("header.faq")}
                             </Link>
                           </li>
                         </ul>
