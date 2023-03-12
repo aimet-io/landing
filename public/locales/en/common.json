@@ -1,4 +1,15 @@
 {
+  "header": {
+    "services": "Service",
+    "softwareDevelopment": "Software Development",
+    "uiUxDesign": "UI/UX Design",
+    "digitalMarketing": "Digital Marketing",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "team": "Team",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
   "footer": {
     "text": "Welcome to Aimet",
     "contactUs": "Contact us",

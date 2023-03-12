@@ -1,4 +1,15 @@
 {
+  "header": {
+    "services": "Servicios",
+    "softwareDevelopment": "Desarrollo de software",
+    "uiUxDesign": "Diseño UI/UX",
+    "digitalMarketing": "Marketing digital",
+    "portfolio": "Portafolio",
+    "about": "Acerca de",
+    "team": "Equipo",
+    "contact": "Contacto",
+    "faq": "Preguntas frecuentes"
+  },
   "footer": {
     "text": "Bienvenido a Aimet",
     "contactUs": "Contáctanos",
