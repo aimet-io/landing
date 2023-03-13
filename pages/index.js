@@ -20,11 +20,21 @@ const Index = () => {
 export async function getStaticProps({ locale }) {
   const portfolioProjects = await fetchAPI("/portfolio-projects", {
     populate: "*",
-  }).then((res) => res.data);
+  })
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
 
   const teamAimet = await fetchAPI("/team-aimets", {
     populate: "*",
-  }).then((res) => res.data);
+  })
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
 
   return {
     props: {

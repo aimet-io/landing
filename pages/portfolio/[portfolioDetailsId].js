@@ -29,7 +29,12 @@ export async function getStaticProps({
 }) {
   const portfolioProjects = await fetchAPI("/portfolio-projects", {
     populate: "*",
-  }).then((res) => res.data);
+  })
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
 
   const project = portfolioProjects.find(
     ({ attributes: { slug } }) => slug === portfolioDetailsId
@@ -39,14 +44,19 @@ export async function getStaticProps({
     props: {
       ...(await serverSideTranslations(locale, ["common", "portfolioDetails"])),
       project,
-      initialData: { portfolioProjects }
+      initialData: { portfolioProjects },
     },
     // revalidate: 300,
   };
 }
 
 export async function getStaticPaths() {
-  const data = await fetchAPI("/portfolio-projects").then((res) => res.data);
+  const data = await fetchAPI("/portfolio-projects")
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
 
   // esperar soporte de internazionalization en Strapi
   // (https://docs.strapi.io/dev-docs/plugins/i18n)

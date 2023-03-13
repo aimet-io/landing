@@ -5,7 +5,7 @@ import Head from "next/head";
 import { fetchAPI } from "@/lib/strapi/api";
 
 const AboutPage = () => {
-  const { t } = useTranslation("about")
+  const { t } = useTranslation("about");
   return (
     <>
       <Head>
@@ -13,14 +13,19 @@ const AboutPage = () => {
       </Head>
       <AboutView />
     </>
-  )
+  );
 };
 
 export async function getStaticProps({ locale }) {
   const teamAimet = await fetchAPI("/team-aimets", {
     populate: "*",
-  }).then((res) => res.data);
-  
+  })
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "about"])),
