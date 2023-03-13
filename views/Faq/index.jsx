@@ -7,8 +7,11 @@ import Cta from "@/components/Cta";
 import Div from "@/components/Div";
 import PageHeading from "@/components/PageHeading";
 import Spacing from "@/components/Spacing";
+import { useTranslation } from "next-i18next";
 
 export function FaqView() {
+
+  const { t } = useTranslation("faq");
   pageTitle("Frequently Asked Questions");
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,23 +19,23 @@ export function FaqView() {
   return (
     <>
       <PageHeading
-        title="Frequently Asked Questions"
+        title={t("header.titlePrincipal")}
         bgSrc="/images/about_hero_bg.jpeg"
-        pageLinkText="FAQ"
+        pageLinkText={t("header.pageLinkText")}
       />
       <Spacing lg="150" md="80" />
       <Div className="container">
         <Div className="row">
           <Div className="col-lg-4">
             <Div className="cs-faq_nav cs-radius_15">
-              <h2 className="cs-faq_nav_title cs-m0">FAQ Category</h2>
+              <h2 className="cs-faq_nav_title cs-m0">{t("faqCategory.title")}</h2>
               <Div className="cs-height_30 cs-height_lg_30" />
               <ul className="cs-list cs-style1 cs-mp0">
                 <li>
                   <Button
                     variant="cs-type2"
                     btnLink="/faq"
-                    btnText="Service related"
+                    btnText={t("faqCategory.serviceRelated")}
                     icon={
                       <Icon icon="material-symbols:content-copy-outline-rounded" />
                     }
@@ -42,7 +45,7 @@ export function FaqView() {
                   <Button
                     variant="cs-type2"
                     btnLink="/faq"
-                    btnText="Pricing"
+                    btnText={t("faqCategory.pricing")}
                     icon={
                       <Icon icon="material-symbols:content-copy-outline-rounded" />
                     }
@@ -52,7 +55,7 @@ export function FaqView() {
                   <Button
                     variant="cs-type2"
                     btnLink="/faq"
-                    btnText="Project delivery"
+                    btnText={t("faqCategory.proyecDelivery")}
                     icon={
                       <Icon icon="material-symbols:content-copy-outline-rounded" />
                     }
@@ -62,7 +65,7 @@ export function FaqView() {
                   <Button
                     variant="cs-type2"
                     btnLink="/faq"
-                    btnText="Documentation"
+                    btnText={t("faqCategory.documentation")}
                     icon={
                       <Icon icon="material-symbols:content-copy-outline-rounded" />
                     }
@@ -83,11 +86,10 @@ export function FaqView() {
         <Cta
           title={
             <>
-              Let’s disscuse make <br />
-              something <i className="mr-2">cool</i> together
+              {t("title.title-principal")} 
             </>
           }
-          btnText="Apply For Meeting"
+          btnText={t("btnMeeting")}
           btnLink="/contact"
           bgSrc="/images/cta_bg.jpeg"
         />
