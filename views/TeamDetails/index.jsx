@@ -1,22 +1,37 @@
 import React, { useEffect } from 'react'
-import { pageTitle } from '@/helper'
 import Cta from '@/components/Cta'
 import PageHeading from '@/components/PageHeading'
 import Div from '@/components/Div'
 import Spacing from '@/components/Spacing'
 import SocialWidget from '@/components/Widget/SocialWidget'
 
-export function TeamDetailsView() {
+export function TeamDetailsView({ member }) {
+  const {
+    attributes: {
+      nombre,
+      especialidad,
+      facebook,
+      twitter,
+      github,
+      linkedin,
+      imagen: { data: { attributes: { url: imagen }} }
+    } 
+  } = member
 
+  const redes = {
+    facebook,
+      twitter,
+      github,
+      linkedin,
+  }
   
-  pageTitle('Team Member');
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   return (
     <>
       <PageHeading 
-        title='Team Details'
+        title={nombre}
         bgSrc='/images/team_hero_bg.jpeg'
         pageLinkText='Team Details'
       />
@@ -25,15 +40,15 @@ export function TeamDetailsView() {
         <Div className="row align-items-center">
           <Div className="col-xl-5 col-lg-6">
             <Div className="cs-radius_15 cs-shine_hover_1">
-              <img src="/images/member_details_1.jpeg" alt="Member" className="w-100" />
+              <img src={imagen} alt="Member" className="w-100" />
             </Div>
           </Div>
           <Div className="col-lg-6 offset-xl-1">
             <Spacing lg='0' md='45'/>
             <Div className="cs-section_heading cs-style1">
-              <h2 className="cs-section_title">Melon Bulgery</h2>
+              <h2 className="cs-section_title">{nombre}</h2>
               <Div className="cs-height_10 cs-height_lg_10" />
-              <h3 className="cs-section_subtitle">Product Designer</h3>
+              <h3 className="cs-section_subtitle">{especialidad}</h3>
               <Div className="cs-height_5 cs-height_lg_5" />
               <Div className="cs-separator cs-accent_bg" />
               <Div className="cs-height_45 cs-height_lg_25" />
@@ -41,7 +56,7 @@ export function TeamDetailsView() {
               <Div className="cs-height_25 cs-height_lg_20" />
               <p className="cs-m0">Ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.</p>
               <Div className="cs-height_45 cs-height_lg_30" />
-              <SocialWidget/>
+              <SocialWidget {...redes} />
             </Div>
           </Div>
         </Div>

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { pageTitle } from "@/helper";
 import Cta from "@/components/Cta";
 import PageHeading from "@/components/PageHeading";
 import Div from "@/components/Div";
@@ -7,100 +6,35 @@ import SectionHeading from "@/components/SectionHeading";
 import Spacing from "@/components/Spacing";
 import Team from "@/components/Team";
 import { useTranslation } from "next-i18next";
+import { useStore } from "@/store";
 
 export function TeamView() {
   const { t } = useTranslation("team");
+  const { teamAimet } = useStore();
 
-  const teamData = [
-    {
-      memberImage: "/images/member_1.jpeg",
-      memberName: "Melon Bulgery",
-      memberDesignation: "Product Designer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
+  const teamData = teamAimet.map(
+    ({
+      attributes: {
+        imagen,
+        nombre,
+        especialidad,
+        linkedin,
+        twitter,
+        facebook,
+        github,
       },
-    },
-    {
-      memberImage: "/images/member_2.jpeg",
-      memberName: "Olinaz Fushi",
-      memberDesignation: "Product Designer",
+    }) => ({
+      memberImage: imagen.data.attributes.url,
+      memberName: nombre,
+      memberDesignation: especialidad,
       memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
+        linkedin,
+        twitter,
+        github,
+        facebook,
       },
-    },
-    {
-      memberImage: "/images/member_3.jpeg",
-      memberName: "David Elone",
-      memberDesignation: "React Developer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-    {
-      memberImage: "/images/member_4.jpeg",
-      memberName: "Melina Opole",
-      memberDesignation: "WP Developer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-    {
-      memberImage: "/images/member_3.jpeg",
-      memberName: "David Elone",
-      memberDesignation: "React Developer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-    {
-      memberImage: "/images/member_4.jpeg",
-      memberName: "Melina Opole",
-      memberDesignation: "WP Developer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-    {
-      memberImage: "/images/member_1.jpeg",
-      memberName: "Melon Bulgery",
-      memberDesignation: "Product Designer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-    {
-      memberImage: "/images/member_2.jpeg",
-      memberName: "Olinaz Fushi",
-      memberDesignation: "Product Designer",
-      memberSocial: {
-        linkedin: "/",
-        twitter: "/",
-        youtube: "/",
-        facebook: "/",
-      },
-    },
-  ];
+    })
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -138,7 +72,7 @@ export function TeamView() {
         <Div className="container">
           <Cta
             title={t("heading.cta.title")}
-            btnText= {t("heading.cta.btnText")}
+            btnText={t("heading.cta.btnText")}
             btnLink="/contact"
             bgSrc="/images/cta_bg.jpeg"
           />

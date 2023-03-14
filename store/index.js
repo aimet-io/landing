@@ -13,7 +13,6 @@ export const useStore = (...args) => {
 let store = {
   portfolioProjects: [],
   teamAimet: [],
-  setPortfolioProjects: (portfolioProjects) => set((state) => ({ ...state, portfolioProjects })),
 };
 
 export const initStore = (initialData = {}) => {
@@ -21,6 +20,8 @@ export const initStore = (initialData = {}) => {
     create((set, get) => ({
       ...store,
       ...initialData,
+      setPortfolioProjects: (portfolioProjects) => set((state) => ({ ...state, portfolioProjects })),
+      setTeamAimet: (teamAimet) => set((state) => ({ ...state, teamAimet })),
     }));
 
   return createStore;
