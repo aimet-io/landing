@@ -17,6 +17,7 @@ export async function getStaticPaths() {
   const pages = [
     "ui-ux-design",
     "reactjs-development",
+    "software-development",
     "digital-marketing",
     "technology",
     "consultancy",
