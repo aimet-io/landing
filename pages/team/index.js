@@ -1,4 +1,4 @@
-import { useEffect} from 'react'
+import { useEffect } from "react";
 import { TeamView } from "@/views/Team";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -6,7 +6,7 @@ import Head from "next/head";
 import { fetchAPI } from "@/lib/strapi/api";
 import { useStore } from "@/store";
 
-const TeamPage = () => {
+const TeamPage = ({ initialData: { teamAimet } }) => {
   const { t } = useTranslation("team");
 
   const store = useStore();
