@@ -23,7 +23,7 @@ export default function Team({
           }}
           className="cs-member_name"
         >
-          <Link href={"/team/"+memberName}>{memberName}</Link>
+          <Link href={"/team/"+memberName.replaceAll(" ", "-")}>{memberName}</Link>
         </h2>
         <p
           className="cs-member_designation text-[17px]"
