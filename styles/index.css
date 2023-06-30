@@ -1,7 +1,9 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
-
+.conponenete{
+    background-color: red;
+}
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
